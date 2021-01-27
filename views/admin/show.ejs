@@ -1,0 +1,12 @@
+<h1>All Images will appear here</h1>
+<a href="/admin-images/upload">Upload image</a>
+<div>
+    <% images.forEach(image=>{ %>
+        <img src="<%=image.imagePath%>" height="350" width="250">
+        <p><%=image.description%></p>
+        <%- include('../partials/deleteForm', {url:`/admin-images/${image.id}`}) %>
+    <%})%>
+
+
+    
+</div>
