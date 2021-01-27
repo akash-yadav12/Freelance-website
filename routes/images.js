@@ -5,18 +5,18 @@ const Image = require('../models/image')
 const imageMimeTypes = ['image/jpeg', 'image/png', 'images/gif']
 
 // show all image
-router.get('/', async(req,res)=>{
+router.get('/', checkAuthenticated, async(req,res)=>{
     try{
         const images = await Image.find({})
         res.render('admin/show',{images:images})
     }catch(e){
         console.error(e)
-        res.redirect('/admin/show')
+        res.redirect('/admin-images')
     }
 
 })
 // Upload image
-router.get('/upload',(req,res)=>{
+router.get('/upload',checkAuthenticated, (req,res)=>{
     renderNewPage(res,new Image())
 })
 
@@ -48,6 +48,8 @@ router.delete('/:id', async (req,res)=>{
     }
 })
 
+
+
 function saveImage(image,imageEncoded){
     if(imageEncoded == null) return
     const cover = JSON.parse(imageEncoded)
@@ -69,5 +71,14 @@ function renderNewPage(res, image, hasError = false){
         res.redirect('/admin-images')
     }
 }
+
+function checkAuthenticated(req,res,next){
+    if (req.isAuthenticated()){
+        return next()
+    }
+    res.redirect('/admin/login')
+}
+
+
 
 module.exports = router

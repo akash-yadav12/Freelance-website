@@ -5,9 +5,15 @@ if (process.env.NODE_ENV !== 'production'){
 const express = require('express')
 const app = express()
 const expressLayouts = require('express-ejs-layouts');
+const passport = require('passport')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
+const flash = require('express-flash')
+const session = require('express-session')
+const User = require('./models/user')
 const methodOverride = require('method-override')
+const initializePassport = require('./passport-config')
+initializePassport(passport,(id)=>{ return User.findById(id)})
 
 app.set('view engine','ejs')
 app.set('views',__dirname+'/views')
@@ -20,9 +26,17 @@ app.use(expressLayouts)
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({limit:'30mb',extended:false}))
 app.use(methodOverride('_method'))
+app.use(flash())
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave:false,
+    saveUninitialized: false
+}))
+app.use(passport.initialize())
+app.use(passport.session())
 
 const imageRouter = require('./routes/images')
-const AuthRouter = require('./routes/auth')
+const AuthRouter = require('./routes/auth');
 
 mongoose.connect(process.env.DATABASE_URL,{
     useNewUrlParser:true,
