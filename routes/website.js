@@ -15,5 +15,8 @@ router.get('/featured-images', async(req,res)=>{
         console.error(e)
     }
 })
+router.get('/featured-videos', (req,res)=>{
+    res.render('website/featured-videos')
+})
 
 module.exports = router

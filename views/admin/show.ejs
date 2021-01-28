@@ -1,15 +1,21 @@
-<h1>All Images will appear here</h1>
-<form action="/admin/logout?_method=DELETE" method="POST">
-    <button type="submit">Logout</button>
-</form>
-<a href="/admin-images/upload">Upload image</a>
-<div>
-    <% images.forEach(image=>{ %>
-        <img src="<%=image.imagePath%>" height="350" width="250">
-        <p><%=image.description%></p>
-        <%- include('../partials/deleteForm', {url:`/admin-images/${image.id}`}) %>
-    <%})%>
-
-
-    
+<div class="show-container">
+    <h1>All Images will appear here</h1>
+    <div class="logout-upload">
+        <form action="/admin/logout?_method=DELETE" method="POST">
+            <button class="btn" type="submit">Logout</button>
+        </form>
+        <a href="/admin-images/upload">Upload image</a>
+    </div>
+    <div class="featured-img">
+        <% images.forEach(image=>{ %>
+            <div class="img-container">
+                <img src="<%=image.imagePath%>">
+                <p><%=image.description%></p>
+                <%- include('../partials/deleteForm', {url:`/admin-images/${image.id}`}) %>
+            </div>
+        <%})%>    
+    </div>
+    <div class="close">
+        &#10006;
+    </div>
 </div>

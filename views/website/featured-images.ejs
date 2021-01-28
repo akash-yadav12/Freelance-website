@@ -1,7 +1,14 @@
-<h1>Image will appear here</h1>
-<div>
-    <% images.forEach(image =>{ %>
-        <img src="<%=image.imagePath%>" height="350" width="250">
-        <p><%=image.description%></p>
-    <%})%>
+<div class="feature-img-container">
+    <h1>Image will appear here</h1>
+    <div class="featured-img">
+        <% images.forEach(image =>{ %>
+            <div class="img-container">
+                <img src="<%=image.imagePath%>">
+                <p><%=image.description%></p>            
+            </div>
+        <%})%>
+    </div>
+    <div id="close">
+        &#10006;
+    </div>
 </div>

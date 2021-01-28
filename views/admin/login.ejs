@@ -1,22 +1,24 @@
-<% if(messages.error) {%>
-    <%= messages.error %>
-<% }%>
-
-<h1>Login</h1>
-<form action="/admin/login" method="POST">
+<div class="login-container">
+    <% if(messages.error) {%>
+        <%= messages.error %>
+    <% }%>
+    
+    <h1>Login</h1>
+    <form action="/admin/login" method="POST">
+        <div>
+            <label for="email">email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+            <label for="password">password</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div>        
+            <a href="/admin/register">Register</a>
+        </div>
+        <button type="submit">Login</button>
+    </form>
     <div>
-        <label for="email">email</label>
-        <input type="email" id="email" name="email" required>
+        <a href="/">Go to back main website</a>
     </div>
-    <div>
-        <label for="password">password</label>
-        <input type="password" id="password" name="password" required>
-    </div>
-    <div>        
-        <a href="/admin/register">Register</a>
-    </div>
-    <button type="submit">Login</button>
-</form>
-<div>
-    <a href="/">Go to back main website</a>
 </div>
