@@ -1,0 +1,7 @@
+<h1>Image will appear here</h1>
+<div>
+    <% images.forEach(image =>{ %>
+        <img src="<%=image.imagePath%>" height="350" width="250">
+        <p><%=image.description%></p>
+    <%})%>
+</div>

@@ -4,6 +4,10 @@ const bcrypt = require('bcryptjs')
 const User = require('../models/user')
 const passport = require('passport')
 
+
+router.get('/',checkNotAuthenticated,(req,res)=>{
+    res.redirect('admin-images')
+})
 router.get('/login',checkNotAuthenticated,(req,res)=>{
     res.render('admin/login')
 })

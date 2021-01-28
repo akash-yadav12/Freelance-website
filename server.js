@@ -35,8 +35,9 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 
-const imageRouter = require('./routes/images')
+const ImageRouter = require('./routes/images')
 const AuthRouter = require('./routes/auth');
+const WebsiteRouter = require('./routes/website');
 
 mongoose.connect(process.env.DATABASE_URL,{
     useNewUrlParser:true,
@@ -46,8 +47,9 @@ const db = mongoose.connection
 db.on('error',err => console.error(err))
 db.once('open',()=> console.log('connected to mongodb'))
 
-app.use('/admin-images',imageRouter)
+app.use('/admin-images',ImageRouter)
 app.use('/admin',AuthRouter)
+app.use('/',WebsiteRouter)
 
 app.listen(process.env.PORT || 3000,()=>{
     console.log('sever listening on port 3000')
