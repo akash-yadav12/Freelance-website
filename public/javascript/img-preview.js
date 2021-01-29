@@ -51,3 +51,14 @@ burger.addEventListener('click',()=>{
     })
 
 })
+
+const navHeader = document.querySelector('.header-nav')
+
+document.addEventListener('scroll',()=>{
+    const y = window.scrollY
+    if( y > 130){
+        navHeader.classList.add('scroll-down')
+    }else{
+        navHeader.classList.remove('scroll-down')
+    }
+})

@@ -12,15 +12,17 @@
 
 :root{
     /* font-family: 'Indie Flower', cursive; */
-    font-family: 'Roboto Mono', monospace;
+    /* font-family: 'Roboto Mono', monospace; */
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
     --dark-background-color : #343a40;
     --background-color: #ffffff;
     --nav-background-color: #fcfcfc;
     --dark-nav-background-color: #272626;
     margin: 0;
     padding: 0;
-    font-size: 16px;
-    --body-height: 92vh;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 400;
     scroll-behavior: smooth;
 }
 body{
@@ -35,7 +37,16 @@ body{
 .login-container,
 .img-container,
 .show-container{
-    margin-top:60px;
+    margin-top:80px;
+}
+
+.feature-img-container .head-title{
+    font-weight: 500;
+    line-height: 1.2;
+    font-size: 2.5rem;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    text-align: center;
 }
 
 .featured-img{
@@ -44,18 +55,20 @@ body{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    margin: 1rem auto;
 }
 .img-container{
     width: 350px;
     max-width: 95%;
     height: 450px;
-    background-color: white;
+    /* background-color: #212121; */
     margin: .5rem 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction:column;
     padding: .5rem;
+    box-shadow: 4px 8px 16px rgba(0,0,0,.4);
 }
 .img-container p{
     font-size: 1.2rem;
@@ -123,8 +136,78 @@ body{
 .all-videos .iframe-video{
     width:400px;
     height: 300px;
+    max-width: 90%;
     margin: 1rem;
+
 }
 
+.login-container{
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.1)), url('/images/bg-home1.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.inner-container{
+    width: 300px;
+    height: auto;
+    background: rgba(255,255,255,.9);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding:1.5rem 2rem;
+    border-radius: 8px;
+    box-shadow: 4px 8px 16px rgba(0,0,0,.4);
+}
+.inner-container .title{
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: center;
+    width: 100%;
+    margin: .5rem;
+    margin-left: 0;
+}
+.inner-container form{
+    width: 100%;
+}
+.inner-container .form-input{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    margin-left:0;
+    width: 100%;
+}
+.inner-container .form-input input{
+    width: 100%;
+    padding: .8rem;
+    border-radius: 4px;
+    border: none;
+    background: none;
+    outline: none;
+    border: .5px solid rgba(0,0,0,.4);
+    transition: all .5s ease;
+}
+.inner-container .form-input input:focus{
+    border: .5px solid #212121;
+}
+.inner-container button{
+    background: none;
+    border: none;
+    padding: .6rem;
+    cursor: pointer;
+    border: 1px solid #212121;
+    width: 100%;
+    transition: all .5s ease;
+    border-radius: 4px;
 
-
+}
+.inner-container button:hover{
+    background-color: #212121;
+    color: white;
+}

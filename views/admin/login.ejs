@@ -1,24 +1,29 @@
 <div class="login-container">
-    <% if(messages.error) {%>
-        <%= messages.error %>
-    <% }%>
-    
-    <h1>Login</h1>
-    <form action="/admin/login" method="POST">
-        <div>
-            <label for="email">email</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div>
-            <label for="password">password</label>
-            <input type="password" id="password" name="password" required>
-        </div>
-        <div>        
-            <a href="/admin/register">Register</a>
-        </div>
-        <button type="submit">Login</button>
-    </form>
-    <div>
-        <a href="/">Go to back main website</a>
+    <div class="inner-container">
+        <% if(messages.error) {%>
+            <%= messages.error %>
+        <% }%>
+        
+        <div class="title">Login</div>
+        <form action="/admin/login" method="POST">
+            <div class="form-input">
+                <label for="email">email:</label>
+                <input type="email" id="email" name="email" required placeholder="Enter Email">
+            </div>
+            <div class="form-input">
+                <label for="password">password:</label>
+                <input type="password" id="password" name="password" required placeholder="Enter Password">
+            </div>
+            <!-- <div>        
+                <a href="/admin/register">Register</a>
+            </div> -->
+            <div class="btn">
+                <button type="submit">Login</button>
+            </div>
+        </form>
+        <!-- <div>
+            <a href="/">Go to back main website</a>
+        </div> -->
     </div>
+
 </div>
