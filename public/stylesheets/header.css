@@ -1,0 +1,240 @@
+/* navbar */
+
+.nav-container{
+    width: 100%;
+    padding:0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+.header-nav{
+    height: 90px;
+    display: flex;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: .8rem 0;
+    /* box-shadow: 0 1px 3px #e3e3e3; */
+}
+.header-nav .nav-active{
+    transform: translateX(-15px);
+}
+.burger{
+    position: relative;
+    height: 25px;
+    cursor: pointer;
+    display: none;
+}
+.burger div{
+    position: absolute;
+    height: 4px;
+	transition: height 0.5s,width 0.5s, margin-left 0.5s transform 0.5s 0.5s;
+	box-shadow: 1px 1px 2px 0 rgba(0,0,0,.2);
+    border-radius: 4px;
+    background-color: #f05b66;
+}
+.burger .line1{
+    width: 35px;
+    transition: transform .5s, top .5s .5s;
+	top:10%;
+}
+.burger .line2{
+    width: 30px;
+    transition: transform .5s, top .5s .5s;
+	top:50%;
+}
+.burger .line3{
+    width: 25px;
+    transition: transform .5s, top .5s .5s;
+	top:90%;
+}
+.burger.active .line1{
+    top:50%;
+	transform:rotate(45deg);
+	transition: top .5s, transform .5s .5s;
+}
+.burger.active .line2{
+    width:0;
+	height:0;
+}
+.burger.active .line3{
+    width: 35px;
+    transform:rotate(135deg);
+	top:50%;
+	transition: top .5s, transform .5s .5s;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo a{
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    font-size: 1rem;
+    color: black;
+    text-transform: uppercase;
+    margin-left: 10px;
+}
+.logo a span{
+    color: #f05b66;
+}
+.header-nav ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .4s linear;
+}
+.header-nav ul li{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    margin-left: .1rem;
+    margin-right: .1rem;
+    padding: .5rem .8rem;
+    transition: all .7s ease;
+}
+.header-nav ul li:hover{
+    background-color: #ffd6ff;
+}
+
+.header-nav ul li .btn{
+    position: relative;
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    font-size: 13px;
+    margin:.3rem 1rem;
+    /* line-height: 22px; */
+    background-color: transparent;
+    border: none;
+    outline: none;
+    white-space: nowrap;
+    cursor: pointer;
+    font-family: 'Roboto Mono', monospace;
+    letter-spacing: .3px;
+    overflow: hidden;
+    text-align: center;
+}
+.header-nav ul li .btn::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 0;
+    background-color: #f05b66;
+    transition: all ease .7s;
+}
+.header-nav ul li .btn::after{
+    content: attr(data-link);
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    height: 100%;
+    width: 0;
+    white-space: nowrap;
+    transition: all .4s cubic-bezier(.49,.51,.53,.6);
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transform: translateZ(0);
+    pointer-events: none; 
+    will-change: transform;
+}
+.header-nav ul li .btn:hover::before{
+    width: 100%;
+}
+.header-nav ul li .btn:hover::after{
+    opacity: 1;
+    color:#f05b66;
+    width: 100%;
+}
+
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (min-width:880px){
+    .nav-container{
+        max-width: 860px;
+        flex-wrap: nowrap;
+    }
+    .nav-container ul{
+        margin-left: auto;
+    }
+}
+
+@media (max-width:768px){
+    
+    .header-nav{
+        justify-content: start;
+    }
+    .header-nav .logo{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .header-nav .logo a{
+        font-size: 1rem;
+    }
+    .header-nav .burger{
+        position: absolute;
+        left: 90%;
+        display: block;
+        margin-left: 10px;
+    }
+    .header-nav ul{
+        position: absolute;
+        top: 90px;
+        margin: 0;
+        width: 100%;
+        margin: 0;
+        height: 92vh;
+        display: flex;
+        padding: 0;
+        flex-direction: column;
+        background-color: #ffd6ff;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(100%);
+    }
+    .header-nav ul li{
+        margin: 2rem .5rem;
+    }
+    .header-nav ul li .btn{
+        color: black;
+    }
+    .header-nav ul li:hover{
+        background-color: white;
+    }
+
+
+}
+
+@media (max-width:500px){
+    .header-nav .logo a{
+        font-size: 1rem;
+    }
+    .header-nav .burger{
+        left: 85%;
+    }
+    .header-nav .logo{
+        margin-left: -20px;
+    }
+
+}

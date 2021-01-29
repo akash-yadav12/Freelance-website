@@ -3,13 +3,12 @@ preview.id = "preview"
 const container = document.querySelector('.container')
 container.append(preview)
 
-const close = document.getElementById('close')
+const closed = document.getElementById('close')
 const images = document.querySelectorAll('.featured-img img')
 images.forEach(image=>{
     image.addEventListener('click',()=>{
-        console.log('clickeddd')
         preview.classList.add('active')
-        close.classList.add('active')
+        closed.classList.add('active')
         const img = document.createElement('img')
         img.src = image.src
         while(preview.firstChild){
@@ -19,15 +18,15 @@ images.forEach(image=>{
     })
 })
 
-if (close){
-    close.addEventListener('click',()=>{
+if (closed){
+    closed.addEventListener('click',()=>{
         preview.classList.remove('active')
-        close.classList.remove('active')
+        closed.classList.remove('active')
     })
     preview.addEventListener('click',(e)=>{
         if(e.target !== e.currentTarget)return
         preview.classList.remove('active')
-        close.classList.remove('active')
+        closed.classList.remove('active')
     })
     
 }
@@ -46,7 +45,7 @@ burger.addEventListener('click',()=>{
             link.style.animation = ''
         }
         else{
-            link.style.animation = `navLinkFade 0.2s forwards ${index/7 + 0.2}s`
+            link.style.animation = `navLinkFade 0.4s forwards ${index/7 + 0.4}s`
         }
         console.log(index/7)
     })
