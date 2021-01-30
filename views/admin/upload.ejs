@@ -1,12 +1,23 @@
 <div class="upload-container">
-    <h2>Upload Image</h2>
-    <a href="/admin-images">Show All Images</a>
-    
-    <form action="/admin-images" method="POST">
-        <label>Image</label>
-        <input type="file" name="image" class="filepond">
-        <label>Description</label>
-        <textarea name="description"></textarea>
-        <button type="submit">Upload</button>
-    </form>
+    <div class="inner-upload-container">
+        <div class="form-row">
+            <h2>Upload Image To Feature in Gallery</h2>
+            <!-- <a href="/admin-images">Show All Images</a> -->
+        </div>
+        <form action="/admin-images" method="POST">
+            <div class="form-row">
+                <div class="form-item cover-image-div no-grow">
+                    <label>Image</label>
+                    <input type="file" name="image" class="filepond">
+                </div>
+                <div class="form-item description-cover">
+                    <label>Description</label>
+                    <textarea name="description"></textarea>
+                </div>
+            </div>
+            <div class=" form-row">
+                <button class="btn-upload" type="submit">Upload</button>
+            </div>
+        </form>
+    </div>
 </div>

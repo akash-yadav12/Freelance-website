@@ -28,8 +28,6 @@
 .header-nav .nav-active{
     transform: translateX(-15px);
 }
-.header-nav.js-active{
-}
 .burger{
     position: relative;
     height: 22px;

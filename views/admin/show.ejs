@@ -10,7 +10,7 @@
         <% images.forEach(image=>{ %>
             <div class="img-container  admin-img">
                 <img src="<%=image.imagePath%>">
-                <p><%=image.description%></p>
+                <p style="line-break: anywhere;"><%=image.description%></p>
                 <%- include('../partials/deleteForm', {url:`/admin-images/${image.id}`}) %>
             </div>
         <%})%>    
