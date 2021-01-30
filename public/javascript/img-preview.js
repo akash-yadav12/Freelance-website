@@ -56,9 +56,11 @@ const navHeader = document.querySelector('.header-nav')
 
 document.addEventListener('scroll',()=>{
     const y = window.scrollY
+    navHeader.classList.add('js-active')
     if( y > 130){
         navHeader.classList.add('scroll-down')
     }else{
         navHeader.classList.remove('scroll-down')
+        navHeader.classList.remove('js-active')
     }
 })

@@ -18,13 +18,17 @@
     right: 0;
     padding: .8rem 0;
     transition: all .5s ease;
+    background-color: white;
+    box-shadow: 0 1px 3px #e3e3e3;
 }
 .header-nav.scroll-down{
-    box-shadow: 0 1px 3px #e3e3e3;
+    background-color: white;
     transform: translateY(-100px);
 }
 .header-nav .nav-active{
     transform: translateX(-15px);
+}
+.header-nav.js-active{
 }
 .burger{
     position: relative;

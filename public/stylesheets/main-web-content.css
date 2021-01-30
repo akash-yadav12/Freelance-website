@@ -6,6 +6,11 @@
     justify-content: center;
     align-items: center;
     padding: 2rem;
+    background: linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)), url('/images/bg-main.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 .main-web-content .dir-info h1{
     font-weight: 500;
@@ -13,14 +18,16 @@
     font-size: 2.5rem;
     margin-top: 0;
     margin-bottom: .5rem;
+    color: white;
 }
 .main-web-content .dir-info p{
     margin-top: 0;
     margin-bottom: 1rem;
+    color: white;
 }
 .main-web-content .dir-img{
     transform: translateX(-30%);
-    z-index: -1;
+    z-index: 1;
 
 }
 .main-web-content .dir-img img{
@@ -44,7 +51,7 @@
 
 #parallax{
     height: 300px;
-    background: linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)), url('/images/bg-home1.jpg');
+    background: linear-gradient(rgba(78, 63, 63, 0.4),rgba(0,0,0,.4)), url('/images/about-img1.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
