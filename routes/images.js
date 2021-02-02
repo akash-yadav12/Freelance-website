@@ -1,5 +1,4 @@
 const express = require('express')
-const book = require('../../Book-library/models/book')
 const router = express.Router()
 const Image = require('../models/image')
 const imageMimeTypes = ['image/jpeg', 'image/png', 'images/gif']
