@@ -20,6 +20,7 @@
     transition: all .5s ease;
     background-color: white;
     box-shadow: 0 1px 3px #e3e3e3;
+    z-index: 1000;
 }
 .header-nav.scroll-down{
     background-color: white;
@@ -218,7 +219,7 @@
         display: flex;
         padding: 0;
         flex-direction: column;
-        background-color: #ffd6ff;
+        background-color: #3b3c36;
         justify-content: center;
         align-items: center;
         transform: translateX(100%);
@@ -227,12 +228,20 @@
         margin: 2rem .5rem;
     }
     .header-nav ul li .btn{
-        color: black;
+        color: white;
     }
     .header-nav ul li:hover{
         background-color: white;
     }
-
+    .header-nav ul li:hover > .btn{
+        color: #3b3c36;
+    }
+    .header-nav ul li .btn:hover::after{
+        color: #3b3c36;
+    }
+    .header-nav ul li .btn::before{
+        background-color: #3b3c36;
+    }
 
 }
 

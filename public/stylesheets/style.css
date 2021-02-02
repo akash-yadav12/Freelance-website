@@ -199,13 +199,18 @@ body{
     align-items: center;
     margin-top: 60px;
 }
-.all-videos{
+.vid-container .vid-title{
+    text-align: center;
+}
+.trailer-out-of-prod-videos,
+.in-house-prod-videos{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap:wrap ;
 }
-.all-videos .iframe-video{
+.trailer-out-of-prod-videos .iframe-video,
+.in-house-prod-videos .iframe-video{
     width:400px;
     height: 300px;
     max-width: 90%;

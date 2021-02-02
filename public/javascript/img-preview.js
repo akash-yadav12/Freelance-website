@@ -35,11 +35,20 @@ if (closed){
 const burger = document.querySelector('.burger')
 const nav = document.querySelector('.header-nav ul')
 const links = document.querySelectorAll('.header-nav ul li')
-
+const dirImg = document.querySelector('.dir-img')
+const dirInfoH1 = document.querySelector('.dir-info h1')
+const dirInfoA = document.querySelector('.dir-info a')
+const dirInfoP = Array.from(document.querySelectorAll('.dir-info p'))
 
 burger.addEventListener('click',()=>{
     burger.classList.toggle('active')
     nav.classList.toggle('nav-active')
+    dirImg.classList.toggle('nav-active')
+    dirInfoH1.classList.toggle('nav-active')
+    dirInfoA.classList.toggle('nav-active')
+    dirInfoP.forEach(p=>{
+        p.classList.toggle('nav-active')
+    })
     links.forEach((link,index)=>{
         if(link.style.animation){
             link.style.animation = ''
@@ -47,7 +56,6 @@ burger.addEventListener('click',()=>{
         else{
             link.style.animation = `navLinkFade 0.4s forwards ${index/7 + 0.4}s`
         }
-        console.log(index/7)
     })
 
 })
