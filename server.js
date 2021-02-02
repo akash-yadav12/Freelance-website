@@ -28,7 +28,7 @@ app.use(bodyParser.urlencoded({limit:'30mb',extended:false}))
 app.use(methodOverride('_method'))
 app.use(flash())
 app.use(session({
-    secret: process.env.SESSION_SECRET,
+    secret: `what the hell`,
     resave:false,
     saveUninitialized: false
 }))
