@@ -1,5 +1,8 @@
 <div class="feature-img-container">
     <p class="head-title">Pictures With Various Artists</p>
+    <% if(images.length < 1){ %>
+        <div style="display: flex; justify-content: center; align-items: center; min-height:70vh;">No Images in the Gallery as of Now</div>
+    <% } %>
     <div class="featured-img">
         <% images.forEach(image =>{ %>
             <div class="img-container">

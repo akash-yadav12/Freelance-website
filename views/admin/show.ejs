@@ -7,6 +7,11 @@
         <a href="/admin-images/upload" class="btn">Upload image</a>
     </div>
     <div class="featured-img">
+        <% if(images.length < 1){ %>
+            <div style="display: flex; justify-content: center; align-items: center; min-height:70vh; padding:1.2rem; flex-direction: column;">No Images in the Gallery as of Now
+                <a href="/admin-images/upload" class="btn">Upload image</a>
+            </div>
+        <% } %>
         <% images.forEach(image=>{ %>
             <div class="img-container  admin-img">
                 <img src="<%=image.imagePath%>">
