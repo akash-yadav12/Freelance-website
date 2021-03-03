@@ -16,7 +16,46 @@
 
     <title>Image Gallery</title>
 </head>
+<style>
+    #loader { 
+        border: 12px solid #f3f3f3; 
+        border-radius: 50%; 
+        border-top: 12px solid #444444; 
+        width: 70px; 
+        height: 70px; 
+        animation: spin 1s linear infinite;
+        position: absolute; 
+        top: 0; 
+        bottom: 0; 
+        left: 0; 
+        right: 0; 
+        margin: auto;  
+    } 
+        
+    @keyframes spin { 
+        100% { 
+            transform: rotate(360deg); 
+        } 
+    } 
+</style>
+<script>
+    document.onreadystatechange = () =>{
+        if(document.readyState !== 'complete'){
+            document.body.style.visibility = "hidden"
+            document.querySelector("#loader").style.visibility = "visible"
+        }else{
+            setTimeout(()=>{
+                document.body.style.visibility = "visible"
+                document.querySelector("#loader").style.display = "none"
+            },500)
+            
+        }
+    }
+</script>
+
 <body>
+
+    <div id="loader"></div>
     <%- include('../partials/header') %>
     <div class="container">
         <%-body %>
